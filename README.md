@@ -1,30 +1,35 @@
-# U10-1 | Delete Character
+# U10-3 | Scrabble Score
 
-Schreiben Sie eine Klasse `Remover `mit einer statischen Methode
+In Scrabble ist jedem Buchstaben eine Punktzahl zugeordnet, die von
+seiner Häufigkeit in der entsprechenden Sprache abhängt.
 
-`public static String removeOccurrences(String str, char ch)`
+Für die englische Version gelten die folgenden Punktzahlen:
 
-die alle Zeichen `ch `aus `str `löscht und das Ergebnis wie folgend
-zurückgibt:
+| **Punkte** |          **Buchstaben**            |
+| --- | --- |
+| 1 |             A, E, I, L, N, O, R, S, T, U    | 
+| 2  |                        D, G                |
+| 3  |                     B, C, M, P             | 
+| 4    |                 F, H, V, W, Y            | 
+| 5   |                        K                  | 
+| 8   |                       J, X                |  
+| 10    |                     Q, Z                | 
+
+Das Wort **FARM** ist folglich 9 Punkte wert: 4 für das F, jeweils einen für A und R und 3 für das M.
+
+Schreiben Sie eine Klasse `ScrabbleScoreChecker `mit einer statischen
+Methode
 
 ```
-Remover.removeOccurrences("This is a test", `t`)
+public static int getWordScore(String str)
 ```
 
-**gibt zurück:** `This is a es`
+welche die Punkte für ein übergebenes Wort zurückgibt. Um zu überprüfen, wie viele Punkte ein einzelner `char `bringt, können
+Sie die einzelnen Buchstaben in jeweils einem String pro Gruppe
+abspeichern, z.B.: 
 
 ```
-Remover.removeOccurrences("Summer is here", `e`)
-
+private final String onePointChars = "AEILNORSTU";
 ```
 
-**gibt zurück:** `Summr is hr`
-
-```
-Remover.removeOccurrences("—0—", `-`)
- ```
- 
- **gibt zurück:** `0`
-
-Beachten Sie, dass Sie kein Objekt einer Klasse erstellen müssen, wenn
-Sie lediglich statische Methoden (wie in diesem Fall) nutzen.
+und mit der `indexOf()`-Methode der `String`-Klasse überprüfen, an welcher Stelle ein bestimmter `char` darin vorkommt (gibt -1 zurück, falls er nicht darin vorkommt).
