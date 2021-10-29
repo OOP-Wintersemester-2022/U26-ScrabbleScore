@@ -1,4 +1,4 @@
-# U10-3 | Scrabble Score
+# U26 | Scrabble Score
 
 In Scrabble ist jedem Buchstaben eine Punktzahl zugeordnet, die von
 seiner Häufigkeit in der entsprechenden Sprache abhängt.
